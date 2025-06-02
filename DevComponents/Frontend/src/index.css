@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-smallPhone: 320px; 
+  --breakpoint-mobilePhone: 480px; 
+  --breakpoint-largePhone: 768px; 
+  --breakpoint-tab: 992px;
+  --breakpoint-largeTab: 1200px; /* Tailwind's "2xl" */
+  --breakpoint-laptop: 1400px; /* Tailwind's "2xl" */
+  --breakpoint-largeLaptop: 1536px; /* Tailwind's "2xl" */
+}
+
+@layer components {
+  .capsuleInputBar {
+    @apply  block  mb-6 border largePhone:mb-8 text-lg w-[93vw] p-2 max-w-[430px] mobilePhone:w-[90vw] 
+           mobilePhone:max-w-[700px] mobilePhone:text-xl rounded-full;
+  }
+  .rectanglInputBar {
+    @apply  block  my-4 border largePhone:mb-8 text-lg w-[93vw] p-2 max-w-[430px] mobilePhone:w-[90vw] 
+           mobilePhone:max-w-[700px] mobilePhone:text-xl rounded-lg;
+  }
+  .codeArea {
+    @apply  block h-50 mb-6 border largePhone:mb-8 text-lg w-[93vw] p-2 max-w-[430px] mobilePhone:w-[90vw] 
+           mobilePhone:max-w-[700px] mobilePhone:text-xl rounded-lg;
+  }
+  .nav{
+    @apply  py-1 px-2 rounded ;
+  }
+  .glassyEffect{
+    @apply bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg
+  }
+  .scrollbar-hide {
+    scrollbar-width: none; /* Firefox */
+  }
+}
