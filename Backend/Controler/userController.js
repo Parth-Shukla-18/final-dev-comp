@@ -1,5 +1,5 @@
 import { users } from '../DataBase/Schema.js'
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 
 const limit = 10;
