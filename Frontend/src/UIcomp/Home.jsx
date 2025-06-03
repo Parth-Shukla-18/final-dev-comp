@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import axios from "axios"
 
 
-const API_URL = "http://localhost:8000/pp/devcomp/post";
+// const VITE_REACT_APP_BACKEND_BASE_URL = "http://localhost:8000/pp/devcomp/post";
 
 const Home = () => {
 
@@ -28,13 +28,22 @@ const Home = () => {
     const [isFetching , setFetch] = useState(0);
 
     const getData  = async () =>{
-      const response = await axios.get(`${API_URL}/allfilter?filter=${filter}&page=${page}&code=${code}` ) || []; 
+      // const response =
+      //   (await axios.get(
+      //     `${VITE_REACT_APP_BACKEND_BASE_URL}/allfilter?filter=${filter}&page=${page}&code=${code}`
+      //   )) || [];
+      const response =
+        (await axios.get(
+          `${
+            import.meta.env.VITE_REACT_APP_BACKEND_BASE_URL
+          }/allfilter?filter=${filter}&page=${page}&code=${code}`
+        )) || [];
       // console.log(response);
-      
-      const data = response.data; 
-      setAllPosts(prev => [ ...prev , ...data]);
 
-      // return response; 
+      const data = response.data;
+      setAllPosts((prev) => [...prev, ...data]);
+
+      // return response;
     }
     useEffect(() => {
         setYes(!isTab);
