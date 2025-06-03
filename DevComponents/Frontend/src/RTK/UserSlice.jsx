@@ -56,13 +56,4 @@ const userSlice = createSlice({
 
 export default userSlice.reducer;
 
-// const hi = {fullName: '',
-//     userName: '',
-//     collageName: '',
-//     password: '',
-//     email: '',
-//     selfDescription: '',
-//     likes: [],
-//     disLikes: [],
-//     saved: [],
-// }
+ 

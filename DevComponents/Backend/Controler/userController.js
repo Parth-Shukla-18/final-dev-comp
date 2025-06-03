@@ -17,8 +17,6 @@ export const register = async( req , res ) =>{
         if(!userName || !password || !email || !fullName){
             return res.status(400).send('some information is missing ')
         }
-        // apply middleware before saving
-        // bcrypt , authentication , token generation, etc.
         const hashedPassword = await bcrypt.hash( password , 10); 
 
         const newUser = new users({

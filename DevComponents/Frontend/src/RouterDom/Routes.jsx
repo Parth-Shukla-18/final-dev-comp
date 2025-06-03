@@ -22,30 +22,6 @@ const AllRoute = () => {
       selectGetCurrentUserResult(state)?.data
     );
     const userName = data?.userName || null;
-    
-  // const getUserPostResult = useSelector(selectGetUserPostResult({ userName }));
-  // const isCached = Boolean(getUserPostResult?.data);
-
-  // const useIsQueryCached = (selector, arg) => {
-  //   const result = useSelector(selector(arg));
-  //   return Boolean(result?.data);
-  // };
-  
-  // Usage
-  // const isCached = useIsQueryCached(selectGetUserPostResult, { userName });
-  
-
-    // const isCached = useSelector((state) =>
-    //     Boolean(
-    //       state.postApi.queries[`getUserPost(${JSON.stringify({ userName })})`]?.data
-    //     )
-    //   );
-
-      // const useCached = (endpointName, args) => {
-      //   return useSelector((state) =>
-      //     Boolean(state.postApi.queries[`${endpointName}(${JSON.stringify(args)})`]?.data)
-      //   );
-      // };      
     let ind = 0;
     if(userName){
         ind = 2;

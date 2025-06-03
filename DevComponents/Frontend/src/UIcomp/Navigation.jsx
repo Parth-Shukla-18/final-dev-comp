@@ -31,21 +31,8 @@ const Navbar = ({show}) => {
     // const [trigger ,{data:lazyData}] = useLazyGetCurrentUserQuery();
     const currentUser = useSelector((state) =>
       selectGetCurrentUserResult(state)?.data
-    );
-    
-    // console.log(currentUser);
-    // if(!currentUser){
-    //   trigger();
-    // }
-    // const [a,b] =useState(true)
-    // if(a){
-    //   b(false);
-    //   trigger()
-    // }
-    
-    
+    ); 
     const userName = lazyData?.userName ||  null;
-    // console.log(userName)
     const navigate = useNavigate();
     
 

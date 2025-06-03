@@ -11,21 +11,6 @@ export const postApi = createApi({
   }),
 
   endpoints: (builder) => ({
-    // updateFilter: builder.mutation({
-    //     query: ({filterData}) => ({
-    //         url:`/addFilter`,
-    //         body: {filterData},
-    //         method: `PATCH`,
-    //         credentials: 'include',
-    //     }),
-    //     providesTags: ['Posts'],
-    // }),
-    // getFilterPosts: builder.query({
-    //     query: ({filter ,code ,page} ) => ({
-    //         url: `post/allfilter?filter=${filter}&page=${page}&code=${code}`,
-    //     }),
-    //     providesTags: ['Posts'],
-    // }),
     createNewPost: builder.mutation({
       query: ({ postData }) => ({
         url: `/post/addpost`,
@@ -192,33 +177,3 @@ const fn = () => {
     return initialData;
 }
 export default fn;
-// const fn = () => {
-//     const [trigger, { data: lazyData, isLoading: isLazyLoading, error: lazyError, isError }] = useLazyGetAllDisLikesQuery();
-//     const { data, isLoading, error } = useGetAllDisLikesQuery();
-// }
-
-       // getPosts: builder.query({
-        //     query: ({ filter , page }) => ({
-        //         url: `/${filter}`,
-        //         body: { page },  // apply only filter array
-        //     }),
-        //     // keepUnusedDataFor:4, //--> Need to study more! here
-        //     transformResponse: (data) => (data) // response data can be transformed
-        // }),
-        // getFilterPosts: builder.query({
-        //     query: ({ filter , code , page }) => ({
-        //         url: `/${filter}/${code}`,
-        //         body: { page }, // apply both filter {filter array , & codeType}
-        //     }),
-        //     // this action will perform before making API call
-        //     onQueryStarted: (targetId ,{dispatch , queryFulfilled}) => {
-        //       const action = dispatch(postApi.util.updateQueryData("getAllDisLikes" , undefined , (data) => {
-        //         const newData = data.filter((curData) => curData.id !== targetId)
-        //         return newData;
-        //     }))
-        //     queryFulfilled.catch(() => {
-        //         action.undo()
-        //     })
-        //     }
-
-        // }),

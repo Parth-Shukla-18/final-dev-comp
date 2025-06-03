@@ -17,7 +17,6 @@ router.route("/saved").get(isAuthenticated,savedPost);
 router.route("/allposts").get(isAuthenticated ,getAllPosts);
 
 // filter post route 
-// router.route("/allfilter/:filter?/:page?:code?/").get(filterPost);
 router.route("/allfilter").get(filterPost);
 
 

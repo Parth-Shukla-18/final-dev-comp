@@ -1,8 +1,6 @@
 import React , { useState } from "react";
 import THEMES from "./Theme.jsx";
 import useTheme from "./Context.jsx"
-// import { useDispatch } from "react-redux";
-// import { createProfile } from '../RTK/UserSlice.jsx'
 import { useAction } from './Context.jsx'
 // import axios from 'axios'
 import { useNavigate, Link } from "react-router-dom";
@@ -62,9 +60,8 @@ const LoginSignupForm = ({navigate}) => {
               
               <input type="text" onChange={(e) => {setUserName(e.target.value)}} value={userName}  id="UserName" name="UserName" placeholder="Enter UserName" required className={`${THEMES[theme].input1} capsuleInputBar`} />
               <input type="text" onChange={(e) => {setFullName(e.target.value)}} value={fullName} id="FullName" name="FullName" placeholder="Full Name" required className={`${THEMES[theme].input2} capsuleInputBar`} />
-              <input type="text" onChange={(e) => {setCollegeName(e.target.value)}} value={collegeName} id="CollegeName" name="CollegeName" placeholder="Collage Name /*Optional"  className={`${THEMES[theme].input1} capsuleInputBar`} />
-             
-              {/* <input type="password" onChange={(e) => {setPassword(e.target.value)}} value={password} name="password" id="password" placeholder="Enter Strong Password" required className={`${THEMES[theme].input2} capsuleInputBar`} /> */}
+              <input type="text" onChange={(e) => {setCollegeName(e.target.value)}} value={collegeName} id="CollegeName" name="CollegeName" placeholder="Collage Name /*Optional"  className={`${THEMES[theme].input1} capsuleInputBar`} /> 
+
               <input type="text" onChange={(e) => {setselfDescription(e.target.value)}} value={selfDescription} id="SelfDescription" name="SelfDescription" placeholder="Self Description.../*Optional" className={`${THEMES[theme].input2} capsuleInputBar`} />
 
               <button type="submit" onClick={handleSignUp} className={`${THEMES[theme].buttons} w-[50vw] max-w-[425px] mx-auto block rounded-full p-[4px] font-semibold mobilePhone:text-lg largeTab:text-2xl`}>Sign Up</button>
@@ -173,17 +170,8 @@ const ForgotPassword = () => {
         } catch (err) {
           console.log(err); 
         }
-      }
+      } 
 
-      // const validateInput = (e) => {
-      //   e.preventDefault();
-      //   setAction(prv => ({
-      //     ...prv,
-      //     email
-      //   })) 
-      //   navigate(2)     
-      // };
-      
         return (
           <div className={`${THEMES[theme].page2} min-h-screen`}>
             <div className="flex justify-center p-[3vw] pt-[10vh]  rounded-lg shadow-lg">  
@@ -228,7 +216,6 @@ const OtpVerification = ({navigate}) => {
     try {
       const response = await axios.post(`${API_URL}/signUp`,action)
       const dispatch = useDispatch();
-      // dispatch(createProfile(response));
       navigate(3)
       
     } catch (err) {

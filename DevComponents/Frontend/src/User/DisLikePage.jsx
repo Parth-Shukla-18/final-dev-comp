@@ -8,8 +8,6 @@ import { selectGetAllDisLikesResult ,selectGetCurrentUserResult } from '../RTK/S
 import { useLazyGetAllDisLikesQuery} from '../RTK/PostApi.jsx'
 import { useDeleteDislikesMutation } from '../RTK/UserApi.jsx'
 
-// const API_URL = "http://localhost:8000/pp/devcomp/post";
-
 const DisLikes = () => {
 
     const cachedDisLikes = useSelector( (state) => selectGetAllDisLikesResult(state)?.data);

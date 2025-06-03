@@ -3,13 +3,9 @@ import { FaThumbsUp, FaThumbsDown, FaSave, FaTrashAlt} from "react-icons/fa";
 import THEMES from "./Theme.jsx";
 import useTheme from "./Context.jsx"
 import { useDispatch ,useSelector} from "react-redux"
-// import axios from "axios";
-// import { addDisLike, addLike, removeDisLike, removeLike, removeSaved } from "../RTK/CurrentUser.jsx";
-// import { dislikePost, likePost } from "../RTK/PostSlice.jsx";
 import { useNavigate } from "react-router-dom";
 import { useUpdateLikeMutation ,useUpdateSavedMutation ,useUpdateDislikeMutation } from '../RTK/PostApi.jsx'
 import {selectGetAllLikesResult ,selectGetAllDisLikesResult ,selectGetAllSavedResult ,selectGetMyPostsResult, selectGetCurrentUserResult} from '../RTK/Selectors.jsx';
-// import {UserApi} from '../RTK/UserApi.jsx';
 import CodeEditor from "./CodeEditor.jsx";
 import { userApi } from "../RTK/UserApi.jsx";
 import { likePost,dislikePost } from "../RTK/PostSlice.jsx";
@@ -129,25 +125,6 @@ const PostCard = ({ title, description ,postId ,userName}) => {
   );
 };
 
-// const OtherPostCard = ({ title, description ,postId ,userName}) => {
-//   const { theme } = useTheme();
-
-//   const shortDescription =
-//     description.length > 15 ? description.slice(0, 15) + "..." : description;
-
-//   const gotoPost = () => {
-//     // handle navigation here
-//   };
-
-//   return (
-//     <button onClick={gotoPost} className='bg-amber-100 p-3 rounded-md text-left w-full'>
-//       <div className='text-lg font-semibold my-2'>{title}</div>
-//       <p>{shortDescription}</p>
-//     </button>
-//   );
-// };
-
-
 const LikeComponent1 = ({ title,userName,postId }) => {
   // 1 = like , 2 = disLike , 3 = saved : for compType
   // const {userName, apply = false , postId} = req.body;
@@ -156,26 +133,9 @@ const LikeComponent1 = ({ title,userName,postId }) => {
     const apply = false;
     const dispatch = useDispatch();
 
-    // <div className="flex text-2xl text-red-500">
-    //   <button onClick={handleDelete}><FaTrashAlt/></button>
-    // </div>
-
     const handleDelete = async () => {
       try {
-        let response = null;
-
-        // if(compType === 1){
-        //   response = await axios.patch(`${API_URL}/post/like`, { userName, postId, apply }, { withCredentials: true });
-        //   dispatch(removeLike({postId})); // removing postId from currentUser
-        //   dispatch(likePost({postId ,apply})); // Decrementing the count of like on this postID          
-        // } else if(compType == 2){
-        //   response = await axios.patch(`${API_URL}/post/disLike` ,{ userName, postId, apply }, { withCredentials: true } )
-        //   dispatch(removeDisLike({postId})); // removing postId from currentUser
-        //   dispatch(dislikePost({postId ,apply}));// Decrementing the count of disLike on this postID
-        // } else if(compType == 3){
-        //   response = await axios.patch(`${API_URL}/post/saved` , { userName, postId, apply }, { withCredentials: true })
-        //   dispatch(removeSaved({postId})); // removing postId from currentUser
-        // }
+        let response = null; 
       } catch (error) {
         
       }

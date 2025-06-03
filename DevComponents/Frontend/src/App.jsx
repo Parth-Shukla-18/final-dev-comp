@@ -29,15 +29,6 @@ function App() {
       <ThemeProvider>
       <Provider store={store} >
          <AllRoute />
-         {/* <UserProfile/> */}
-        {/* <OtherUserProfile/> */}
-         {/* <DisLikes/> */}
-         {/* <Saved/> */}
-         {/* <PostView/> */}
-         {/* <ChangePassword /> */}
-         {/* <Navbar/> */}
-         {/* <PostForm/> */}
-         {/* <CardComponent/> */}
       </Provider>
       </ThemeProvider>
       {/* </Router> */}

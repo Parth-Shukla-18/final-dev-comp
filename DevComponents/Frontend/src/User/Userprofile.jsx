@@ -43,14 +43,8 @@ const UserProfile = () => {
   const [college ,setCollege] = useState(collegeName)
   const [description ,setDescription] = useState(selfDescription)
   
-  const navigate = useNavigate();
-  // useEffect(() => {
-    //   if(!userName){
-      //     // navigate('/login-signup')
-      //   }
-      // } ,[navigate])
+  const navigate = useNavigate(); 
       const allPosts = useSelector((state) => selectGetMyPostsResult(state)?.data);
-// const allPosts = null;
 const [trigger ,{data ,isError:hi ,error:hlo}] = useLazyGetMyPostsQuery();
 
 useEffect(() => {
@@ -104,7 +98,6 @@ useEffect(() => {
 
   const [uploadProfileImage , { }] = useUploadProfileImageMutation();
 
-  // const { data:img } = useGetImageQuery(); 
   const [ imgTrigger , {data:lazyData }] = useLazyGetImageQuery();
   const curImgData = useSelector( (state) => selectGetImageResult(state)?.data );
  
@@ -114,8 +107,6 @@ useEffect(() => {
     } 
   }, [])  
   const img = curImgData || lazyData;  
-  // console.log(curImgData);
-   
   useEffect(()=>{ 
     setProfileImg(img?.profileImg);
     setBgImg(img?.bgImg);
@@ -292,15 +283,4 @@ useEffect(() => {
 };
 
 export default UserProfile;
-
-        // {/* User Uploads */}
-        // <div id="userUploads" className="my-6 bg-fuchsia-200 gap-[2px] grid grid-cols-3 largePhone:grid-cols-4">
-        //   {
-        //     <img
-        //       key={`Id`}
-        //       src={`assets/ThreeCats.png`}
-        //       alt="User upload"
-        //       className="h-[30vw] rounded-md largePhone:w-[23vw] largePhone:h-[23vw] max-h-[205px] max-w-[205px] w-[30vw] border-2 border-blue-600 object-cover"
-        //     />
-        //   }
-        // </div>
+ 

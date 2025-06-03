@@ -6,25 +6,6 @@ import { useSelector} from "react-redux";
 // import { createPost } from '../RTK/PostSlice.jsx'
 import { useCreateNewPostMutation } from '../RTK/PostApi.jsx';
 import { selectGetCurrentUserResult } from '../RTK/Selectors.jsx'
-// import axios from 'axios'
-
-
-// const API_URL = "http://localhost:8000";
-
-// fetch user id if logedIN and no user data , if no logedIn first send 
-// user to logIN and after logIN take userName from userSlice.
-
-// const fetchData = async () => {
-
-//   try {
-//     const userData = await axios.get(`${API_URL}/profile`,{ withCredentials: true })
-//     const { userName } = userData();
-//     // save it store
-
-//   } catch (err) {
-    
-//   }
-// }
 
 const ReactCode = ({}) => {
 
@@ -199,47 +180,3 @@ const PostForm = () => {
     NonReactCode,
     PostForm,
   }
-
-  // const CodingLanguage = ({navigate}) => {
-      
-  //   const { theme } = useTheme()
-  //   const [lang , setLang] = useState(0)
-
-  //   const HandleLang = () => {
-  //     e.preventDefault();
-  //     console.log(lang);
-  //     navigate(3)
-  //   }
-    
-  //   return (
-  //     <div id="loginSignupForm" className={`${THEMES[theme].page2} min-h-screen`}>
-  //       <div id="signUp" className="flex flex-col items-center justify-center">
-  //         <form action="#" className={` ${THEMES[theme].outerContainer} p-6 mobilePhone:p-14 my-16 rounded-lg`}>
-  //           <label htmlFor="userid" className={`${THEMES[theme].labels} my-4 block text-lg largePhone:text-xl tab:text-2xl font-bold`}>
-  //             Select Your Coding Language
-  //           </label>
-  //           <div className="my-4">
-  //             <input type="radio" id="React" checked={lang === value} onChange={() => {setLang(1)}} name="CodingLanguage"  required />
-  //             <label htmlFor="React" className={`${THEMES[theme].labels}  my-4 px-6 text-lg largePhone:text-xl tab:text-2xl font-bold`}>React</label>
-  //           </div>
-  //           <div className="my-4">
-  //             <input type="radio" id="Non-React" checked={lang === value} onChange={() => {setLang(2)}} name="CodingLanguage" required  />
-  //             <label htmlFor="Non-React" className={`${THEMES[theme].labels} my-4 px-6 text-lg largePhone:text-xl tab:text-2xl font-bold`}>Non-React</label>
-
-  //           </div>
-  //           <div className="my-4">
-  //             <input type="radio" id="Non-react-tailwind" checked={lang === value} onChange={() => {setLang(3)}} name="CodingLanguage" required  />
-  //             <label htmlFor="Non-react-tailwind" className={`${THEMES[theme].labels} my-4 px-6 text-lg largePhone:text-xl tab:text-2xl font-bold`}>Non-React with Tailwind</label>
-
-  //           </div>
-            
-  //           <button type="submit" onClick={() => navigate(8)} className={`${THEMES[theme].buttons} w-[50vw] my-4 mt-6 max-w-[425px] mx-auto block rounded-full p-[4px] font-semibold mobilePhone:text-lg largeTab:text-2xl`}>
-  //             <Link to="/">Skip</Link></button>
-  //           <button type="submit" onClick={HandleLang} className={`${THEMES[theme].buttons} w-[50vw] my-4 max-w-[425px] mx-auto block rounded-full p-[4px] font-semibold mobilePhone:text-lg largeTab:text-2xl`}>Next</button>
-          
-  //         </form>
-  //       </div>
-
-  //     </div>
-  //   );
-  // };

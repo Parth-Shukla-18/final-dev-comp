@@ -13,13 +13,7 @@ export const addPost =  async(req ,res) => {
         const html = postData.html || ""; 
         const css = postData.css || "" ; 
         const js = postData.js || ""; 
-        const react = postData.react || ""; 
-
-        // console.log(postData);
-        // console.log(req.id);
-        
-        // codeType ,title ,description ,html ,css ,js ,react,
-
+        const react = postData.react || "";  
         if( !title || !codeType ){
            return res.status(400).json({message:'some information is missing', success:false})
         }
@@ -169,9 +163,7 @@ export const dislikedPost = async (req ,res) => {
                 }
             },
         ])
-
-        // process the result
-        // console.log(result);
+ 
         return res.status(200).json(result);
 
     } catch (err) {
@@ -219,8 +211,7 @@ export const savedPost = async (req ,res) => {
                 }
             },
         ])
-        // process the result
-        // console.log(result);
+        
         return res.status(200).json(result);
 
     } catch (err) {
@@ -322,52 +313,8 @@ export const savePost = async (req ,res) => {
        console.log(err)
        return res.status(500).send('Internal server error');
     }
-}
-// get all -> filter post 
-// export const filterPost = async (req, res) => {
-//     try {
-//         const filter = req.params.filter || "all";
-//         const code = req.params.code ? parseInt(req.params.code) : undefined;
-//         const page = parseInt(req.query.page) || 1;
-      
-        
-//         // const limit = parseInt(req.query.limit) || 2; // Ensure limit is defined
-//         const skip = (page - 1) * limit;
-//         console.log(page);
-        
-//         let matchStage = {};
-//         if (filter !== 'all') {
-//             matchStage.title = filter;
-//         }
-//         if (code !== undefined) {
-//             matchStage.codeType = code;
-//         } 
-//         const result = await posts.aggregate([
-//             {$match : matchStage},
-//             { $sort: { likes: -1 } },
-//             { $project: {
-//                 _id: 0,
-//                 postId: "$_id",
-//                 description: "$description",
-//                 title: "$title",
-//                 userName: "$user",
-//                 codeType: "$codeType",
-//                 likes: "$likes",
-//                 html: { $ifNull: ["$html", ""] },
-//                 css: { $ifNull: ["$css", ""] },
-//                 js: { $ifNull: ["$js", ""] },
-//                 react: { $ifNull: ["$react", ""] },
-//             }},
-//             { $skip: skip },
-//             { $limit: limit }
-//         ])
-        
-//         res.status(200).send(result);
-//     } catch (err) {
-//         console.log(err); // Uncomment this line to log the error
-//         res.status(500).send('Internal server error');
-//     }
-// };
+} 
+
 export const filterPost = async (req, res) => {
     try {
         const filter = req.query.filter || "all";

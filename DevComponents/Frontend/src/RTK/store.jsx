@@ -9,12 +9,7 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 
 const store = configureStore({
     reducer: {
-        // users: userReducer,
-        // appData: filterArrayReducer,
-        // posts:postReducer,
-        // currentUser:currentUser,
         [postApi.reducerPath]: postApi.reducer,
-        // [userApi.reducerPath]: userApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(postApi.middleware),  // userApi.middleware

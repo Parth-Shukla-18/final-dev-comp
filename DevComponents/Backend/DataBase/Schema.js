@@ -1,13 +1,6 @@
 import mongoose from "mongoose";
 
-// const appSchema = new mongoose.Schema({
-//     filterArr: {
-//         type: [String],
-//         default: []
-//     },
-// });
-
-
+ 
 const userSchema = new mongoose.Schema({
     _id:{
         type:String,

@@ -14,22 +14,6 @@ const postSlice = createSlice({
     name: "posts",
     initialState,
     reducers: {
-        // create post  
-        // createPost:(state , action ) =>{
-        //     const { userName } = action.payload; 
-        //     state.posts.push({
-        //         user: userName, 
-        //         title:action.payload.title, 
-        //         description:action.payload.description || "", 
-        //         codeType:action.payload.codeType, 
-        //         html: action.payload.html || "",
-        //         css: action.payload.css || "",
-        //         js: action.payload.js || "",
-        //         react: action.payload.react ||"",
-        //         likes:0, 
-        //         disLikes:0, 
-        //     })
-        // },
         createPost: (state , action) => {
             state.myPosts.push(action.payload);
         },
