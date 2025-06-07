@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken"
             return res.status(400).json({
                 message:"User not Authorised ", 
                 success:false,
-            })
+            });
         }
         
         // now check if the token is correct or not 
@@ -17,8 +17,8 @@ import jwt from "jsonwebtoken"
         if( ! decodeToken ){
             return res.status(400).json({
                 message:"Invalid Token", 
-                success:true,
-            })
+                success:false,
+            });
         }
 
         // if everything is right then store the id of user into token 
@@ -27,7 +27,12 @@ import jwt from "jsonwebtoken"
         next(); 
     } catch (error) {
         console.log(error);
+        return res.status(500).json({
+            message: 'Internal server error in authentication',
+            error: error.message,
+            success: false
+        });
     }
 }
 
-export default isAuthenticated; 
+export default isAuthenticated;

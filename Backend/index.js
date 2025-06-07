@@ -28,6 +28,11 @@ app.use(
 app.use("/pp/devcomp", userRoute);
 app.use("/pp/devcomp/post", postRoute);
 
+// Add GET handler for /pp/devcomp/login to clarify usage
+app.get('/pp/devcomp/login', (req, res) => {
+  res.status(405).send('Use POST method to login.');
+});
+
 // Add root and favicon routes to prevent 404s on backend
 app.get('/', (req, res) => {
   res.send('Backend API is running');

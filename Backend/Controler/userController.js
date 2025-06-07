@@ -82,7 +82,6 @@ export const login = async ( req , res ) =>{
         // now as all the details are correct , so generating the TOKEN
         const token = jwt.sign( tokenData , process.env.SECRET_KEY , {expiresIn :'1d'} ); 
 
-
         // now adding the details of the user in user variable 
         const newUser = {
             userName:user._id, 
@@ -94,12 +93,18 @@ export const login = async ( req , res ) =>{
 
         // send the token in the from of cookie in the browser 
         return res.status(201).cookie("token", token,  {maxAge: 1*24*60*60*1000 , httpsOnly:true , sameSite:'strict'}).json({
-            message:`Welcome back ${newUser.fullName}`, 
-            newUser, 
+            message:`Welcome back ${newUser.fullName}`,
+            newUser,
             success:true,
-        })
+        });
     } catch (error) {
-        console.log(error);
+        console.error('Login error:', error);
+        return res.status(500).json({
+            message: 'Internal server error',
+            error: error.message,
+            stack: error.stack,
+            success: false
+        });
     }
 }
 
