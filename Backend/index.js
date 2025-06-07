@@ -1,4 +1,4 @@
- import express from "express";
+import express from "express";
 import dotenv from "dotenv";
 dotenv.config({});
 import connectDB from "./DataBase/db.js";
@@ -19,6 +19,15 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 app.use("/pp/devcomp", userRoute);
 app.use("/pp/devcomp/post", postRoute);
+
+// Add root and favicon routes to prevent 404s on backend
+app.get('/', (req, res) => {
+  res.send('Backend API is running');
+});
+
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).end();
+});
 
 app.listen(port, (req, res) => {
   console.log("App is running at port", port);
