@@ -34,9 +34,7 @@ const Home = () => {
       //   )) || [];
       const response =
         (await axios.get(
-          `${
-            import.meta.env.VITE_REACT_APP_BACKEND_BASE_URL
-          }/allfilter?filter=${filter}&page=${page}&code=${code}`
+          `${import.meta.env.VITE_REACT_APP_BACKEND_BASE_URL}/pp/devcomp/post/allfilter?filter=${filter}&page=${page}&code=${code}`
         )) || [];
       // console.log(response);
 

@@ -249,6 +249,7 @@ const CardComponent = ({ postId = "", userName = "", html = "<h1>hello</h1>", cs
       setDisLikes(currentUser?.disLikes?.includes(postId));
       setSaved(currentUser?.saved?.includes(postId));
     }
+    // like dislike ke liye change kiye hai 
     // Like count logic: always show at least 1 if user has liked, never negative
     const base = Math.max(Number(likes) || 0, 0);
     if (base === 0 && currentUser?.likes?.includes(postId)) {
@@ -258,10 +259,11 @@ const CardComponent = ({ postId = "", userName = "", html = "<h1>hello</h1>", cs
     }
   }, [currentUser, postId, likes]);
 
-  // Restore last known good like/dislike logic (YouTube style)
+  // Restore last known good like/dislike logic (Youtube style)
+
   const [updateLike] = useUpdateLikeMutation();
   const [updateDislike] = useUpdateDislikeMutation();
-  const [updateSaved] = useUpdateSavedMutation();
+  const [updateSaved] = useUpdateSavedMutation(); 
 
   const HandleLike = async () => {
     if (applyLike) {

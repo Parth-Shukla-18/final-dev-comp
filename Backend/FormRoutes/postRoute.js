@@ -14,7 +14,7 @@ router.route("/disliked").get(isAuthenticated,dislikedPost);
 router.route("/saved").get(isAuthenticated,savedPost);
 
 // get current user posts route 
-router.route("/allposts").get(isAuthenticated ,getAllPosts);
+router.route("/allposts").get(isAuthenticated, getAllPosts);
 
 // filter post route 
 router.route("/allfilter").get(filterPost);
@@ -24,7 +24,7 @@ router.route("/allfilter").get(filterPost);
 router.route("/deletepost").delete(isAuthenticated , deletePost); 
 
 // add post route 
-router.route("/addpost").post(isAuthenticated,addPost); 
+router.route("/addpost").post(isAuthenticated, addPost); 
 
 // like route 
 router.route("/like").patch(isAuthenticated,likePost)

@@ -15,10 +15,10 @@ router.route("/login").post(login);
 router.route("/logout").post(logout)
 
 // Profile route 
-router.route("/profile").get(isAuthenticated ,seeProfile); 
+router.route("/profile").get(isAuthenticated, seeProfile); 
 
 // Update Profile route 
-router.route("/profile").patch( isAuthenticated , updateProfile); 
+router.route("/profile").patch(isAuthenticated, updateProfile); 
 
 // change password route 
 router.route("/changepassword").post(isAuthenticated , changePassword); 
