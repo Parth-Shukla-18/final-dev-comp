@@ -17,11 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    // origin: [
-    //   "http://localhost:5173",
-    //   "https://devcomponent-flame.vercel.app"
-    // ],
-    origin: true,
+    origin: [
+      "https://devcomponent-flame.vercel.app",
+      "http://localhost:5173"
+    ],
     credentials: true,
   })
 );

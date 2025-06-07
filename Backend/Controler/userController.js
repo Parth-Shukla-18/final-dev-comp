@@ -43,35 +43,37 @@ export const register = async( req , res ) =>{
 
 // Login controller 
 export const login = async ( req , res ) =>{
-    
     try {
         const {userName , password } = req.body;
+        console.log('Login attempt:', { userName, password });
         const _id = userName;   
 
         if( !_id || !password ){
-            res.status(400).json({
+            console.log('Missing userName or password');
+            return res.status(400).json({
                 message:"Some information is missing", 
-                sucess:false
-            })
+                success:false
+            });
         }
 
-        
         // checking if the user exists or not 
         const user = await users.findOne({_id}); 
         if( ! user ){
+            console.log('Username does not exist:', _id);
             return res.status(400).json({
                 message:"Username does not exists", 
                 success:false,
-            })
+            });
         }
 
         // now checking if the password is correct or NOT 
         const correctPass = await bcrypt.compare( password , user.password); 
         if( !correctPass ){
-            res.status(400).json({
+            console.log('Incorrect password for:', _id);
+            return res.status(400).json({
                 message:"Incorrect username or password", 
                 success:false,
-            })
+            });
         }
 
         // we will store the userId in the form of abject inside the token 
