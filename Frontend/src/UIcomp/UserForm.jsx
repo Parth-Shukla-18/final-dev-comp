@@ -58,7 +58,7 @@ const LoginSignupForm = ({navigate}) => {
                 Enter Unique User-Name
               </label>
               
-              <input type="text" onChange={(e) => {setUserName(e.target.value)}} value={userName}  id="UserName" name="UserName" placeholder="Enter UserName" required className={`${THEMES[theme].input1} capsuleInputBar`} />
+              <input type="text" onChange={(e) => {setUserName(e.target.value)}} value={userName}  id="SignUpUserName" name="UserName" placeholder="Enter UserName" required className={`${THEMES[theme].input1} capsuleInputBar`} />
               <input type="text" onChange={(e) => {setFullName(e.target.value)}} value={fullName} id="FullName" name="FullName" placeholder="Full Name" required className={`${THEMES[theme].input2} capsuleInputBar`} />
               <input type="text" onChange={(e) => {setCollegeName(e.target.value)}} value={collegeName} id="CollegeName" name="CollegeName" placeholder="Collage Name /*Optional"  className={`${THEMES[theme].input1} capsuleInputBar`} /> 
 
@@ -75,7 +75,7 @@ const LoginSignupForm = ({navigate}) => {
           <div id="logIn" className={`${THEMES[theme].page2} hidden`}>
             <div className="flex flex-col items-center justify-center my-12">
               <form action="#"className={` ${THEMES[theme].outerContainer} p-6 my-14 rounded-lg`} >
-              <input type="text" onChange={(e) => {setUserName(e.target.value)}} value={userName}  id="UserName" name="UserName" placeholder="Enter UserName" required className={`${THEMES[theme].input1} capsuleInputBar`} />
+              <input type="text" onChange={(e) => {setUserName(e.target.value)}} value={userName}  id="LoginUserName" name="UserName" placeholder="Enter UserName" required className={`${THEMES[theme].input1} capsuleInputBar`} />
               <input type="password" onChange={(e) => {setPassword(e.target.value)}} value={password} name="password" id="password" placeholder="Enter Strong Password" required className={`${THEMES[theme].input2} capsuleInputBar`} />
                 
                 <button type="submit" onClick={handleLogin} className={`${THEMES[theme].buttons} w-[50vw] max-w-[425px] mx-auto block rounded-full p-[4px] font-semibold mobilePhone:text-lg largeTab:text-2xl`}
