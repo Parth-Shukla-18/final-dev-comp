@@ -19,12 +19,13 @@ import { ActionProvider } from './Context'
       const [currentFormIndex, setCurrentFormIndex] = useState(ind);
     
       const navigate = (index) => {
-        if(index<5){
-        setCurrentFormIndex(index);
+        if(index < allForms.length){
+          setCurrentFormIndex(index);
         }
       };
     
       const SelectedForm = allForms[currentFormIndex];
+      if (!SelectedForm) return <div>Form not found</div>;
     
       return (
         <ActionProvider>
