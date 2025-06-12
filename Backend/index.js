@@ -21,8 +21,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://localhost:5173",
-      "https://devcomponent-flame.vercel.app",
+      " https://final-dev-comp.onrender.com",
     ],
     credentials: true,
   })

@@ -6,7 +6,7 @@ export const postApi = createApi({
   refetchOnFocus: true, // need listener in store
   refetchOnReconnect: true, // need listener in store
   baseQuery: fetchBaseQuery({
-    baseUrl: `${import.meta.env.VITE_REACT_APP_BACKEND_BASE_URL}/pp/devcomp`,
+    baseUrl: ` https://final-dev-comp.onrender.com/pp/devcomp`,
     credentials: "include",
   }),
 
