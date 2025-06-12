@@ -45,7 +45,7 @@ export const register = async( req , res ) =>{
 export const login = async ( req , res ) =>{
     try {
         const {userName , password } = req.body;
-        console.log('Login attempt:', { userName, password });
+        // console.log('Login attempt:', { userName, password });
         const _id = userName;   
 
         if( !_id || !password ){

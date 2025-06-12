@@ -321,7 +321,7 @@ export const filterPost = async (req, res) => {
         const code = req.query.code ? parseInt(req.query.code) : undefined;
         const page = req.query.page ? parseInt(req.query.page) : 1;
 
-        console.log(`Page: ${page}, Code: ${code}, Filter: ${filter}`);
+        // console.log(`Page: ${page}, Code: ${code}, Filter: ${filter}`);
         const skip = (page - 1) * limit; // Calculate skip value
 
 
